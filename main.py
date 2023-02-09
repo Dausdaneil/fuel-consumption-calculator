@@ -74,31 +74,6 @@ class Model:
 
                 ksl = total_distance / fuel_consumption
 
-                """
-                response = messagebox.askyesno("Result",
-                "\n(a). Previous Month Balance: " + str(self.previous_month_bal) +" Litre(s)" +
-                "\n(b). Total Purchased: " + str(self.total_fuel_purchased) + " Litre(s)" +
-                "\n(c). Total Fuel: " + "%.2f" % total_fuel + " Litre(s)" +
-                "\n(d). Current Month Balance: " + "%.2f" % fuel_bal + " Litre(s)" +
-                "\n(e). Fuel Consumption: " + "%.2f" % fuel_consumption + " Litre(s)" +
-                "\nTotal Distance: " + str(total_distance) + " KM" +
-                "\nKSL: " + "%.2f" % ksl +
-                "\nTotal Costs: RM " + "%.2f" % total_purchased_cost +
-                "\n\nDo you want to save this result for " + regNum[z])
-
-                response = messagebox.askyesno("Result", "Fuel balance for " + regNum[z] + " is: " + "%.2f" % fuel_bal + "\nTotal Distance: " +\
-                       str(total_distance) + "KM.\nTotal Fuel: " + "%.2f" % total_fuel + "\nTotal Costs: RM" +\
-                       "%.2f" % total_purchased_cost + "\nFuel Consumption: " + "%.2f" % fuel_consumption +\
-                       "\nKSL: " + "%.2f" % ksl + "\n\nDo you want to save this result for " + regNum[z])
-
-                data = [self.total_fuel_purchased, float(total_purchased_cost), int(total_distance),
-                        float("%.2f" % fuel_consumption), float("%.2f" % fuel_bal)]
-                if response == 1:
-                    for cell in range(10, 15):
-                        ws.cell(row=bil[z] + 1, column=cell).value = data[cell - 10]
-                    jbu.save('KEND_JBU.xlsx')
-
-                """
                 return "Fuel balance for " + regNum[z] + " is: " + "%.2f" % fuel_bal + "\nTotal Distance: " + \
                        str(total_distance) + "KM.\nTotal Fuel: " + "%.2f" % total_fuel + "\nTotal Costs: RM" + \
                        "%.2f" % total_purchased_cost + "\nFuel Consumption: " + "%.2f" % fuel_consumption + \
